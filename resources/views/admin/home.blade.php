@@ -1,17 +1,21 @@
-@extends('admin.layout.auth')
+@extends('admin.layout.dashboard')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
 
-                <div class="panel-body">
-                    You are logged in as Admin!
-                </div>
-            </div>
+<!--**********************************
+    Content body start
+***********************************-->
+    <div class="content-body">
+        <!-- row -->	
+        <div class="page-titles">
+            <ol class="breadcrumb">
+                <li><h5 class="bc-title">Dashboard</h5></li>                
+            </ol>
         </div>
     </div>
-</div>
+		
+<!--**********************************
+    Content body end
+***********************************-->
+
 @endsection
