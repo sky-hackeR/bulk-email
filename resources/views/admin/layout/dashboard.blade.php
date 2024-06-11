@@ -21,6 +21,7 @@
 	<link href="{{ asset('assets/vendor/swiper/css/swiper-bundle.min.css') }}" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Material+Icons&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="{{ asset('assets/cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.css') }}">
+	<link href="{{ asset('assets/vendor/dropzone/dist/dropzone.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets/vendor/jvmap/jquery-jvectormap.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets/cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css') }}" rel="stylesheet">
@@ -168,13 +169,52 @@
 		  <div class="deznav">
             <div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
+					<li class="menu-title">ADMIN</li>
 
 					<li>
-						<a href="{{ url('/admin/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-							<i class="mdi mdi-power"></i>
-							<span data-key="t-logout">Logout</span>
+						<a href="{{ url('/admin/home') }}" aria-expanded="false">
+							<div class="menu-icon">
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M2.5 7.49999L10 1.66666L17.5 7.49999V16.6667C17.5 17.1087 17.3244 17.5326 17.0118 17.8452C16.6993 18.1577 16.2754 18.3333 15.8333 18.3333H4.16667C3.72464 18.3333 3.30072 18.1577 2.98816 17.8452C2.67559 17.5326 2.5 17.1087 2.5 16.6667V7.49999Z" stroke="#888888" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M7.5 18.3333V10H12.5V18.3333" stroke="#888888" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</div>
+							<span class="nav-text">Home</span>
 						</a>
 					</li>
+
+
+					<li>
+						<a href="{{ url('/admin/compose') }}" aria-expanded="false">
+							<div class="menu-icon">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M13.7476 20.4429H21.0002" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M12.78 3.79479C13.5557 2.86779 14.95 2.73186 15.8962 3.49173C15.9485 3.53296 17.6295 4.83879 17.6295 4.83879C18.669 5.46719 18.992 6.80311 18.3494 7.82259C18.3153 7.87718 8.81195 19.7645 8.81195 19.7645C8.49578 20.1589 8.01583 20.3918 7.50291 20.3973L3.86353 20.443L3.04353 16.9723C2.92866 16.4843 3.04353 15.9718 3.3597 15.5773L12.78 3.79479Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M11.021 6.00092L16.4732 10.188" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</div>
+							<span class="nav-text">Compose Email</span>
+						</a>
+					</li>
+
+
+					<li>
+						<a href="{{ url('/admin/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" aria-expanded="false">
+							<div class="menu-icon">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M15.016 7.38948V6.45648C15.016 4.42148 13.366 2.77148 11.331 2.77148H6.45597C4.42197 2.77148 2.77197 4.42148 2.77197 6.45648V17.5865C2.77197 19.6215 4.42197 21.2715 6.45597 21.2715H11.341C13.37 21.2715 15.016 19.6265 15.016 17.5975V16.6545" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M21.8096 12.0214H9.76855" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M18.8813 9.10626L21.8093 12.0213L18.8813 14.9373" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</div>
+							<span class="nav-text">Logout</span>
+							<form id="logout-form" action="{{ url('/admin/logout') }}" method="POST" style="display: none;">@csrf</form>
+						</a>
+					</li>
+
+
+					
+
 				</ul>	
 			</div>
         </div>		
@@ -219,6 +259,10 @@
 	<script src="{{ asset('assets/vendor/chart.js/Chart.bundle.min.js') }}"></script>
 	<script src="{{ asset('assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
 	<script src="{{ asset('assets/vendor/apexchart/apexchart.js') }}"></script>
+
+	<script src="{{ asset('assets/vendor/jquery-nice-select/js/jquery.nice-select.min.js') }}"></script>
+	<script src="{{ asset('assets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+	<script src="{{ asset('assets/vendor/dropzone/dist/dropzone.js') }}"></script>
 	
 	<!-- Dashboard 1 -->
 	<script src="{{ asset('assets/js/dashboard/dashboard-1.js') }}"></script>

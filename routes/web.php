@@ -36,6 +36,7 @@ Route::group(['prefix' => 'admin'], function () {
   Route::get('/password/reset/{token}', [App\Http\Controllers\Admin\Auth\ResetPasswordController::class, 'showResetForm']);
 
   Route::get('/home', [App\Http\Controllers\Admin\AdminController::class, 'index'])->middleware(['auth:admin']);
+  Route::get('/compose', [App\Http\Controllers\Admin\AdminController::class, 'compose'])->middleware(['auth:admin']);
   
 });
 

@@ -30,4 +30,12 @@ class AdminController extends Controller
             'admin' => $admin
         ]);
     }
+
+    public function compose(){
+        $admin = Admin::first();
+        return view('admin.compose',[
+            'admin' => $admin
+        ]);
+    }
+
 }
