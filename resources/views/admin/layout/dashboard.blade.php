@@ -211,10 +211,6 @@
 							<form id="logout-form" action="{{ url('/admin/logout') }}" method="POST" style="display: none;">@csrf</form>
 						</a>
 					</li>
-
-
-					
-
 				</ul>	
 			</div>
         </div>		

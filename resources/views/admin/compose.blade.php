@@ -32,28 +32,37 @@
                                         </div>
                                         <div class="compose-wrapper mt-3 " id="compose-content">
                                             <div class="compose-content">
-                                                <form action="#">
+                                                <form action="{{ url('/admin/sendEmail') }}" enctype="multipart/form-data">
+                                                    @csrf
                                                     <div class="mb-3">
-                                                        <input type="text" class="form-control bg-transparent" placeholder=" To:">
+                                                        <h5 class="my-3"><i class="fa fa-address-book fa-flip-vertical me-2"></i> To</h5>
+                                                        <input type="file" name="to" class="form-control bg-transparent" placeholder=" To:">
                                                     </div>
                                                     <div class="mb-3">
-                                                        <input type="text" class="form-control bg-transparent" placeholder=" Subject:">
+                                                        <h5 class="my-3"><i class="fa fa-paperclip me-2"></i> Subject</h5>
+                                                        <input type="text" name="subject" class="form-control bg-transparent" placeholder=" Subject:">
                                                     </div>
                                                     <div class="mb-3">
-                                                        <textarea id="email-compose-editor" class="textarea_editor form-control bg-transparent" rows="5" placeholder="Enter text ..."></textarea>
+                                                        <h5 class="my-3"><i class="fa fa-paperclip me-2"></i> Message Body</h5>
+                                                        <textarea id="email-compose-editor" name="body" class="textarea_editor form-control bg-transparent" rows="5" placeholder="Enter text ..."></textarea>
+                                                    </div>
+
+                                                    <div class="mt-4 mb-3 float-end">
+                                                        <button class="btn btn-danger light btn-sl-sm" type="button"><span class="me-2"><i class="fa fa-times"></i></span>Discard</button>
+                                                        <button class="btn btn-primary btn-sl-sm me-2" type="submit"><span class="me-2"><i class="fa fa-paper-plane"></i></span>Send</button>
                                                     </div>
                                                 </form>
-                                                <h5 class="my-3"><i class="fa fa-paperclip me-2"></i> Attatchment</h5>
+                                                {{-- <h5 class="my-3"><i class="fa fa-paperclip me-2"></i> Attatchment</h5>
                                                 <form action="#" class="dropzone">
                                                     <div class="fallback">
                                                         <input name="file" type="file" multiple>
                                                     </div>
-                                                </form>
+                                                </form> --}}
                                             </div>
-                                            <div class="mt-4 mb-3 float-end">
+                                            {{-- <div class="mt-4 mb-3 float-end">
                                                 <button class="btn btn-danger light btn-sl-sm" type="button"><span class="me-2"><i class="fa fa-times"></i></span>Discard</button>
                                                 <button class="btn btn-primary btn-sl-sm me-2" type="submit"><span class="me-2"><i class="fa fa-paper-plane"></i></span>Send</button>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>

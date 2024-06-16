@@ -37,6 +37,8 @@ Route::group(['prefix' => 'admin'], function () {
 
   Route::get('/home', [App\Http\Controllers\Admin\AdminController::class, 'index'])->middleware(['auth:admin']);
   Route::get('/compose', [App\Http\Controllers\Admin\AdminController::class, 'compose'])->middleware(['auth:admin']);
+
+  Route::get('/sendEmail', [App\Http\Controllers\Admin\AdminController::class, 'sendEmail'])->middleware(['auth:admin']);
   
 });
 
